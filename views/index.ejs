@@ -1,0 +1,155 @@
+  
+<% include partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Casino Betting Strategy Simulator</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Use the calculators below to simulate a session of even-odds betting using popular betting strategies. Try before you bet!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card" id="martingaleCard">
+                <div class="card-body">
+                    <h3 lass="card-title">Martingale</h3>
+                    <p class="card-text">The Martingale system is simple: double your bet after every loss. It can prove very successful in producing short bursts of profit with enough balance to protect against losses, but is very likely to fail in longer sessions.</p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form method="GET" action="/simulate">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-4">
+                                        <label class="input-heading" for="starting-balance">Starting balance</label>
+                                        <input onkeyup="checkForm()" name="balance" class="form-control" id="balanceField">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label class="input-heading" for="exampleFormControlInput1">Betting unit</label>
+                                        <input onkeyup="checkForm()" name="unit" class="form-control" id="unitField">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label class="input-heading" for="exampleFormControlInput1">Number of rounds</label>
+                                        <input onkeyup="checkForm()" name="rounds" class="form-control" id="roundsField">
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary" id="simulateMartingale1000Times" disabled>Run simulator</button>
+
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <!-- <canvas id="myChart"></canvas> -->
+                    <% if (locals.data) { %>
+                    
+                    <script>
+                        var createIndicator = container => {
+                            var bar = new ProgressBar.Circle(container, {
+                          color: "#ee5",
+                          // This has to be the same size as the maximum width to
+                          // prevent clipping
+                          strokeWidth: 15,
+                          trailWidth: 15,
+                          trailColor: '#3d3d21',
+                          easing: 'bounce',
+                          duration: 1000,
+                          text: {
+                            autoStyleContainer: false
+                          },
+                          from: { color: '#ee5', width: 15 },
+                          to: { color: '#ee5', width: 15 },
+                          // Set default step function for all animate calls
+                          step: function(state, circle) {
+                            circle.path.setAttribute('stroke', state.color);
+                            circle.path.setAttribute('stroke-width', state.width);
+                        
+                            var value = Math.round(circle.value() * 100);
+                            if (value === 0) {
+                              circle.setText('');
+                            } else {
+                              circle.setText(value);
+                            }
+                        
+                          }
+                        });
+                        
+                        
+                        bar.animate(<%= data.chancesOfSuccess / 100 %>);  // Number from 0.0 to 1.0
+                        }
+                        
+                    </script>
+                    
+                        <div class="row">
+                            <div class="col-lg-12">
+                              <div class="card-deck">
+                                <div class="card" id="chancesOfSuccessCard">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Chance of success</h5>
+                                    <div id="indicatorArea"></div>
+                                    <script>createIndicator("#indicatorArea")</script>
+                                    
+                                  </div>
+                                  <div class="card-footer">
+                                    <p class="card-text small">The chances of this session ending with no loss.</p>
+                                  </div>
+                                </div>
+                            
+                           
+                                
+                                        <div class="card" id="chancesOfSuccessCard">
+                                          <div class="card-body">
+                                            <h5 class="card-title">Average profit</h5>
+                                            
+                                              <h1 class="card-text card-currency"><%= data.avgProfit %></h1>
+                                            
+                                            
+                                            
+
+                                          </div>
+                                          <div class="card-footer">
+                                            <p class="card-text small">Average profit when session succeeds.</p>
+                                          </div>
+                                        </div>
+                                    
+                                
+                            
+                            
+                                        <div class="card" id="chancesOfSuccessCard">
+                                          <div class="card-body">
+                                            <h5 class="card-title">Average loss</h5>
+                                            <h1 class="card-text card-currency"><%= data.avgLoss %></h1>
+
+                                            
+
+                                          </div>
+                                          <div class="card-footer">
+                                              <p class="card-text small">Average loss when session fails.</p>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                        </div>
+                    <% } %>    
+                        
+                        
+                    
+                    
+                    
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+                    
+
+<% include partials/footer %>

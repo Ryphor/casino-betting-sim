@@ -1,0 +1,125 @@
+body {
+    margin-bottom: 20px;
+    font-family: "Ubuntu";
+    background-color: #111;
+    color: #eeee54a3
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald";
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE5;
+}
+
+.input-heading {
+    font-family: "Oswald";
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EE5;
+}
+
+.form-group input {
+    font-size: 3em;
+    font-family: "Oswald";
+    background-color: #3d3d21;
+    border: none;
+    border-radius: 0;
+    color: #ee5;
+    font-weight: bold;
+
+}
+
+.form-group input:focus {
+    font-size: 3em;
+    font-family: "Oswald";
+    background-color: #3d3d21;
+    border: none;
+    border-radius: 0;
+    color: #ee5;
+    font-weight: bold;
+}
+
+.form-control {
+    padding: .375rem 1rem;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.card {
+    background-color: #111;
+}
+
+.container {
+    margin-top: 40px;
+    width: 900px;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+#indicatorArea {
+  margin: 20px;
+  position: relative;
+}
+
+.progressbar-text {
+    font-size: 2em;
+    font-family: "Oswald";
+    color: #EE5;
+}
+
+.progressbar-text::after {
+    content: "%";
+    font-size: 0.7em;
+    margin-left: 0.15em;
+    opacity: 0.4;
+}
+
+#buttonsRow {
+    margin-top: 20px;
+}
+
+.card-currency::before {
+    content: "£";
+    font-size: 0.7em;
+    opacity: 0.2;
+    margin-right: 0.1em;
+}
+
+.btn-primary {
+    background-color: #EE5;
+    color: #111;
+    border: none;
+    height: 2em;
+    font-family: "Oswald";
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: .4rem 1.25rem;
+    border-radius: 0;
+}
+
+.btn-primary:hover {
+    background-color: #EE5;
+    border: none;
+    border-radius: 0;
+}
+
+.btn-primary:disabled {
+    background-color: #EE5!important;
+    color: #111!important;
+    opacity: 0.4;
+    border-radius: 0;
+
+}

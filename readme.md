@@ -1,4 +1,5 @@
 # Casino Betting Simulator
+[Running here on Heroku for demo](https://enigmatic-brook-29267.herokuapp.com/simulate?balance=50&unit=10&rounds=2)
 ### Work in progress
 
 This project involves a lot of messy code right now, but I'm fairly happy with what it does for this 'alpha' version. The refactoring can come soon as I build in a few more features.
